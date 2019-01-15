@@ -23,10 +23,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	  protected void configure(HttpSecurity http) throws Exception {
 	    http
 	      .csrf().disable()
-	      .authorizeRequests()
-	      .antMatchers("/api/menus").permitAll()
+	      .cors().and().authorizeRequests()
+	      .antMatchers("/api/menus").authenticated()
+	      .antMatchers("/api/showmenu").permitAll()
 	      .antMatchers("/api/typeplat").authenticated()
-	      .antMatchers("/api/users").permitAll()
+	      .antMatchers("/api/users").authenticated()
 	      .and().httpBasic()
 	      .and().formLogin().loginPage("/api/auth/login").permitAll()
 	      .and().sessionManagement().disable();

@@ -45,6 +45,12 @@ public class MenusController {
         
         return menuRepository.findAll();
     }
+	
+	@GetMapping("/showmenu")
+    public List<Menus> showMenu() { // Function that returns all the menus created
+        
+        return menuRepository.findAll();
+    }
 
     @PostMapping("/menus")
     public Menus createMenu(@Valid @RequestBody Menus Menu) { // Function that return allow to create new menu
