@@ -35,7 +35,7 @@ public class UserController {
         
         return false;
     }
-
+	@CrossOrigin
     @PostMapping("/users")
     public Users createUser(@Valid @RequestBody Users user) { // Function that  allow to create new user
         
