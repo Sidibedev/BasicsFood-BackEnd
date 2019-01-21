@@ -27,7 +27,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	      .antMatchers("/api/menus").authenticated()
 	      .antMatchers("/api/showmenu").permitAll()
 	      .antMatchers("/api/typeplat").authenticated()
-	      .antMatchers("/api/users").authenticated()
+	      .antMatchers("/api/users").permitAll()
 	      .and().httpBasic()
 	      .and().formLogin().loginPage("/api/auth/login").permitAll()
 	      .and().sessionManagement().disable();
