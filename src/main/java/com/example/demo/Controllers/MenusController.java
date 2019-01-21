@@ -29,7 +29,7 @@ import static org.springframework.data.mongodb.core.aggregation.Aggregation.sort
 import org.springframework.data.mongodb.core.MongoTemplate;
 @RestController
 @RequestMapping("/api")
-@CrossOrigin("*")
+@CrossOrigin(origins = "https://basics-food.firebaseapp.com")
 public class MenusController {
 	
 		

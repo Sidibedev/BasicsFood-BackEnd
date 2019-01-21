@@ -18,7 +18,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin("*")
+@CrossOrigin(origins = "https://basics-food.firebaseapp.com")
 public class UserController {
 	
 		
@@ -37,7 +37,6 @@ public class UserController {
     }
 
     @PostMapping("/users")
-    @CrossOrigin("http://localhost:4200")
     public Users createUser(@Valid @RequestBody Users user) { // Function that  allow to create new user
         
     	BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
