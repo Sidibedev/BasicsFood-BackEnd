@@ -35,8 +35,9 @@ public class UserController {
         
         return false;
     }
-	@CrossOrigin
+
     @PostMapping("/users")
+    @CrossOrigin("http://localhost:4200")
     public Users createUser(@Valid @RequestBody Users user) { // Function that  allow to create new user
         
     	BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
